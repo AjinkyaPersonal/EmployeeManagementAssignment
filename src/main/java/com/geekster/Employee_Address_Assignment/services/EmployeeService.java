@@ -27,17 +27,18 @@ public class EmployeeService {
         return "Added successfully";
     }
 
-    public String getEmployees(Long employeeId) {
+    public List<Employee> getEmployees(Long employeeId) {
         if(employeeId == null){
-            return employeeRepo.findAll().toString();
+            return employeeRepo.findAll();
         }else{
             List<Employee> employeeList = new ArrayList<>();
             Optional<Employee> list = employeeRepo.findById(employeeId);
             if(list.isEmpty()){
-                return "Employee with "+employeeId + " not found";
+                throw new IllegalStateException("employeeId not found");
             }
             employeeList.add(employeeRepo.findById(employeeId).get());
-            return employeeList.toString();
+            return employeeList;
+
         }
 
     }

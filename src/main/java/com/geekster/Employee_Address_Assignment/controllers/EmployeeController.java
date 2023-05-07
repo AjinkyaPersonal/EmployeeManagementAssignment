@@ -20,7 +20,7 @@ public class EmployeeController {
     }
 
     @GetMapping(value = "/employees")
-    public String getEmployees (@Nullable @RequestParam Long employeeId){
+    public List<Employee> getEmployees (@Nullable @RequestParam Long employeeId){
         return employeeService.getEmployees(employeeId);
     }
 

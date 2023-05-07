@@ -1,10 +1,14 @@
 package com.geekster.Employee_Address_Assignment.models;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.hibernate.engine.internal.Cascade;
 
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Table
 public class Employee {
